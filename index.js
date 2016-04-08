@@ -24,6 +24,14 @@ var favicons = {
 };
 
 
+/**
+ * Used to count how many tests have passed or failed
+ */
+
+var failed = 0;
+var passed = 0;
+
+
  * Add an .html() method to tape's t
  */
 
