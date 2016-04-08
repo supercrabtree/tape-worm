@@ -51,6 +51,14 @@ document.body.style.borderTopWidth = '10px';
 document.body.style.borderTopStyle = 'solid';
 
 
+/**
+ * A container for our test results, with a little margin
+ */
+
+var testResults = document.body.appendChild(document.createElement('div'));
+testResults.style.margin = '10px';
+
+
  * Add an .html() method to tape's t
  */
 
