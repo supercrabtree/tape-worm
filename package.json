@@ -1,0 +1,35 @@
+{
+  "name": "tape-worm",
+  "version": "0.0.0",
+  "description": "tape with html injection",
+  "main": "index.js",
+  "scripts": {
+    "test": "browserify test/test.js -o test/test-bundle.js -d",
+    "test-watch": "watchify test/test.js -o test/test-bundle.js -vd & live-server test --watch=test-bundle.js"
+  },
+  "keywords": [
+    "tape",
+    "worm",
+    "html",
+    "browser",
+    "test",
+    "tests",
+    "inject",
+    "tap",
+    "unit"
+  ],
+  "author": "George Crabtree <supercrabtree@googlemail.com> (https://github.com/supercrabtree)",
+  "license": "MIT",
+  "devDependencies": {
+    "bl": "1.1.2",
+    "tape": "4.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supercrabtree/tape-worm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/supercrabtree/tape-worm/issues"
+  },
+  "homepage": "https://github.com/supercrabtree/tape-worm"
+}
