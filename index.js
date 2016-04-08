@@ -17,6 +17,12 @@ var richColors = {
   passing: '#8ECA6C'
 };
 
+var favicons = {
+  pending: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2P8c03rPwMFgHHUAIbRMGAYDQOGYREGAKXKL8HxxzjXAAAAAElFTkSuQmCC',
+  failing: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2O85+z8n4ECwDhqAMNoGDCMhgHDsAgDADNuJkH6lyxeAAAAAElFTkSuQmCC',
+  passing: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2PsO5Xzn4ECwDhqAMNoGDCMhgHDsAgDABOhLEG8Hw/SAAAAAElFTkSuQmCC'
+};
+
 
  * Add an .html() method to tape's t
  */
