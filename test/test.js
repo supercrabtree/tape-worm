@@ -2,6 +2,13 @@ var tape = require('tape');
 var bl = require('bl');
 var tapeworm = require('../');
 
+tapeworm.infect(tape);
+
+test('infect should add a method html to t', function (t) {
+  t.equal(typeof t.html, 'function');
+  t.end();
+}, verifyAsserts({ok: 1, fail: 0}));
+
 
 /**
  * Helper functions stolen directly from blue-tape
