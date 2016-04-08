@@ -42,6 +42,15 @@ faviconEl.setAttribute('type', 'img/png');
 document.head.appendChild(faviconEl);
 
 
+/**
+ * Some initial styles, border color is changed when tests are run
+ */
+
+document.body.style.margin = 0;
+document.body.style.borderTopWidth = '10px';
+document.body.style.borderTopStyle = 'solid';
+
+
  * Add an .html() method to tape's t
  */
 
