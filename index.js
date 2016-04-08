@@ -32,6 +32,16 @@ var failed = 0;
 var passed = 0;
 
 
+/**
+ * Set up the favicon element
+ */
+
+var faviconEl = document.createElement('link');
+faviconEl.setAttribute('rel', 'icon');
+faviconEl.setAttribute('type', 'img/png');
+document.head.appendChild(faviconEl);
+
+
  * Add an .html() method to tape's t
  */
 
