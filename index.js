@@ -93,10 +93,42 @@ function decorateTape(tape) {
 }
 
 
+/**
+ * Create a wrapper around console.log
+ */
+
+function hijackLog() {
+  var oldLog = console.log;
+
+  console.log = function (message) {
+
+    count(message);
+    style();
+
+    var match = (message + '').match(/^# #tapeworm-html(.*)/);
+    var isHtml = !!match;
+
+    if (match) {
+      var html = match[1];
+      var div = testResults.appendChild(document.createElement('div'));
+      div.innerHTML = html;
+    } else {
+      var pre = testResults.appendChild(document.createElement('pre'));
+      pre.style.margin = 0;
+
+      pre.innerHTML = message + '\n';
+      oldLog.apply(console, arguments);
+    }
+
+  };
+}
+
+
 function count(message) {
   if (/^ok/.test(message)) passed++;
   if (/^not ok/.test(message)) failed++;
 }
+
 
 /**
  * Infect is the only exposed method
