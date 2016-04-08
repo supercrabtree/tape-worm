@@ -59,6 +59,27 @@ var testResults = document.body.appendChild(document.createElement('div'));
 testResults.style.margin = '10px';
 
 
+/**
+ * Style the page
+ */
+
+function style() {
+  var testsAre = 'pending';
+
+  if (failed > 0) {
+    testsAre = 'failing';
+  }
+  else if (passed > 0) {
+    testsAre = 'passing';
+  }
+
+  document.body.style.borderTopColor = richColors[testsAre];
+  faviconEl.setAttribute('href', favicons[testsAre]);
+  document.body.style.backgroundColor = colors[testsAre];
+}
+
+
+/**
  * Add an .html() method to tape's t
  */
 
