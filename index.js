@@ -93,6 +93,10 @@ function decorateTape(tape) {
 }
 
 
+function count(message) {
+  if (/^ok/.test(message)) passed++;
+  if (/^not ok/.test(message)) failed++;
+}
 
 /**
  * Infect is the only exposed method
