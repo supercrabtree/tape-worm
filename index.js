@@ -138,6 +138,7 @@ function count(message) {
 
 function infect(tape) {
   decorateTape(tape);
+  hijackLog();
 };
 
 
