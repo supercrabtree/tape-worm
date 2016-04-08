@@ -2,6 +2,22 @@ var trim = require('string.prototype.trim');
 
 
 /**
+ * Create the colors and favicons used to style the page
+ */
+
+var colors = {
+  pending: '#F3EDD3',
+  failing: '#FFECEC',
+  passing: '#EAFFEA'
+};
+
+var richColors = {
+  pending: '#FCD62A',
+  failing: '#DE4343',
+  passing: '#8ECA6C'
+};
+
+
  * Add an .html() method to tape's t
  */
 
