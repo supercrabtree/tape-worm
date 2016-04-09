@@ -2,12 +2,11 @@
 
 Tapeworm allows you to use the full power of the DOM when testing in the browser using [tape](https://github.com/substack/tape).
 
-Tapeworm adds four features to tape.
+Tapeworm adds three features to tape.
 
 1. Spits the test results into the DOM.
-2. Colors the background, green for passing, red for failing, yellow for pending.
-3. Colors the favicon, green for passing, red for failing, yellow for pending.
-4. Adds an `t.html` method, where you can inject any arbitrary html into the DOM.
+2. Colors the background and favicon; green for passing, red for failing, yellow for pending.
+3. Adds an `t.html` method, where you can inject any arbitrary html into the DOM.
 
 # Screenshots
 #### Passing
@@ -40,7 +39,7 @@ test('the worm images should look the same', function (t) {
         t.html('<img src="' + base64DiffData + '">');
       }
 
-      t.equal(pass, true, 'the images are the same');
+      t.equal(pass, true);
     });
 });
 ```
@@ -48,3 +47,49 @@ test('the worm images should look the same', function (t) {
 And now we have image diffs in our output, whoop!
 
 ![diff-worms](https://raw.githubusercontent.com/supercrabtree/tape-worm/master/media/img-diff-screenshot.png)
+
+# Installation and Usage
+
+```
+npm install tape-worm
+```
+
+Tapeworm is designed to run with tape and all it's variants ([blue-tape](https://www.npmjs.com/package/blue-tape), [redtape](https://github.com/eugeneware/redtape), etc). All you need to do is import it into your test file and then `infect` tape.
+
+```js
+// test.js
+var test = require('tape');
+var tapeworm = require('tape-worm');
+
+tapeworm.infect(test);
+```
+Use [browserify](http://browserify.org/) to bundle up the code for browser
+
+```
+browserify test.js > test-bundle.js
+```
+
+Create a simple html wrapper (you need the head section for the favicon injection)
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tests</title>
+  </head>
+  <body>
+    <script src="test-bundle.js"></script>
+  </body>
+</html>
+```
+
+Now load this into the browser and you're done.
+
+If you want it to reload on save you might end up with something like this:
+
+```
+watchify test.js -o test-bundle.js -vd & live-server test --watch=test-bundle.js
+```
+
+# 🙂️
