@@ -1,4 +1,5 @@
 var test = require('tape');
+var sinon = require('sinon');
 var tapeworm = require('../');
 
 tapeworm.infect(test);
@@ -21,4 +22,11 @@ test('infect should add a method html to t', function (t) {
   t.end();
 });
 
+test('t.html should call console log', function (t) {
+  sinon.spy(console, 'log');
+  t.html('<div></div>');
+  t.equal(1, console.log.callCount);
+  t.end();
+  console.log.restore();
+});
 
