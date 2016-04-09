@@ -35,20 +35,25 @@ var passed = 0;
 /**
  * Set up the favicon element
  */
+var faviconEl;
 
-var faviconEl = document.createElement('link');
-faviconEl.setAttribute('rel', 'icon');
-faviconEl.setAttribute('type', 'img/png');
-document.head.appendChild(faviconEl);
+function injectFavicon() {
+  faviconEl = document.createElement('link');
+  faviconEl.setAttribute('rel', 'icon');
+  faviconEl.setAttribute('type', 'img/png');
+  document.head.appendChild(faviconEl);
+}
 
 
 /**
  * Some initial styles, border color is changed when tests are run
  */
 
-document.body.style.margin = 0;
-document.body.style.borderTopWidth = '10px';
-document.body.style.borderTopStyle = 'solid';
+function setInitalStyle() {
+  document.body.style.margin = 0;
+  document.body.style.borderTopWidth = '10px';
+  document.body.style.borderTopStyle = 'solid';
+}
 
 
 /**
@@ -137,6 +142,8 @@ function count(message) {
  */
 
 function infect(tape) {
+  injectFavicon();
+  setInitalStyle();
   decorateTape(tape);
   hijackLog();
   style();
