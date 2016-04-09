@@ -8,10 +8,10 @@ test('infect should inject a custom favicon into the DOM', function (t) {
   var favicon = document.querySelector('link[rel="icon"]');
   var faviconHref = favicon.getAttribute('href');
 
-  t.equal(true, !!favicon, 'favicon element exists');
+  t.equal(!!favicon, true, 'favicon element exists');
   t.equal(
-    true,
     /^data:image\/png;base64,/.test(faviconHref),
+    true,
     'favicon href is a base64 png'
   );
   t.end();
@@ -19,10 +19,10 @@ test('infect should inject a custom favicon into the DOM', function (t) {
 
 test('infect should change the style of the body', function (t) {
   var s = document.body.style;
-  t.equal(true, !!s.backgroundColor, 'backgroundColor is changed');
-  t.equal(true, !!s.borderTopWidth, 'borderTopWidth is changed');
-  t.equal(true, !!s.borderTopStyle, 'borderTopStyle is changed');
-  t.equal(true, !!s.margin, 'margin is changed');
+  t.equal(!!s.backgroundColor, true, 'backgroundColor is changed');
+  t.equal(!!s.borderTopWidth, true, 'borderTopWidth is changed');
+  t.equal(!!s.borderTopStyle, true, 'borderTopStyle is changed');
+  t.equal(!!s.margin, true, 'margin is changed');
   t.end();
 });
 
@@ -34,13 +34,13 @@ test('infect should add a method html to t', function (t) {
 test('t.html should call console log', function (t) {
   sinon.spy(console, 'log');
   t.html('<div></div>');
-  t.equal(1, console.log.callCount);
+  t.equal(console.log.callCount, 1);
   t.end();
   console.log.restore();
 });
 
 test('t.html should inject html into the DOM', function (t) {
   t.html('<div id="silly-hat"></div>');
-  t.equal(true, !!document.getElementById('silly-hat'));
+  t.equal(!!document.getElementById('silly-hat'), true);
   t.end();
 });
