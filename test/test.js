@@ -17,7 +17,7 @@ test('infect should inject a custom favicon into the DOM', function (t) {
 });
 
 test('infect should add a method html to t', function (t) {
-  t.equal(typeof t.html, 'function');
+  t.equal(typeof t.html, 'function', 't.html is defined');
   t.end();
 });
 
