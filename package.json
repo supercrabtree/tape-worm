@@ -1,6 +1,6 @@
 {
   "name": "tape-worm",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "tape with html injection",
   "main": "index.js",
   "scripts": {
