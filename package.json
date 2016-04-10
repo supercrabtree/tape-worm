@@ -1,7 +1,7 @@
 {
   "name": "tape-worm",
   "version": "0.0.1",
-  "description": "tape with html injection",
+  "description": "Put tape's TAP output into the DOM, and add html injection method.",
   "main": "index.js",
   "scripts": {
     "test": "browserify test/test.js -o test/test-bundle.js -d",

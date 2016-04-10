@@ -1,6 +1,6 @@
 ![tapeworm](https://raw.githubusercontent.com/supercrabtree/tape-worm/master/media/tape-worm-header.jpg)
 
-Tapeworm allows you to use the full power of the DOM when testing in the browser using [tape](https://github.com/substack/tape).
+Tapeworm allows you to the DOM as a reporter when testing in the browser using [tape](https://github.com/substack/tape).
 
 Tapeworm adds three features to tape.
 
@@ -89,7 +89,9 @@ Now load this into the browser and you're done.
 If you want it to reload on save you might end up with something like this:
 
 ```
-watchify test.js -o test-bundle.js -vd & live-server test --watch=test-bundle.js
+watchify test.js -o test-bundle.js -vd & live-server --watch=test-bundle.js
 ```
 
-# 🙂️
+# Warning
+
+Calling `tapeworm.infect(test)` is monkey patching and you should be aware of the potential [pitfalls](https://en.wikipedia.org/wiki/Monkey_patch#Pitfalls).
