@@ -1,6 +1,6 @@
 {
   "name": "tape-worm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Put tape's TAP output into the DOM, and add html injection method.",
   "main": "index.js",
   "scripts": {
