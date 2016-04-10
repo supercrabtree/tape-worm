@@ -2,6 +2,11 @@ var test = require('tape');
 var sinon = require('sinon');
 var tapeworm = require('../');
 
+test('tape should not already have a method html', function (t) {
+  t.equal(test.html, undefined);
+  t.end();
+});
+
 tapeworm.infect(test);
 
 test('infect should inject a custom favicon into the DOM', function (t) {
