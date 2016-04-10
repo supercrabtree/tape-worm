@@ -9,7 +9,17 @@ test('tape should not already have a method html', function (t) {
 
 tapeworm.infect(test);
 
-test('infect should inject a custom favicon into the DOM', function (t) {
+test('infect should add a method html to t', function (t) {
+  t.equal(typeof t.html, 'function', 't.html is defined');
+  t.end();
+});
+
+
+/**
+ * Skip below tests if document global is not availible
+ */
+
+test('infect should inject a custom favicon into the DOM', {skip: !document}, function (t) {
   var favicon = document.querySelector('link[rel="icon"]');
   var faviconHref = favicon.getAttribute('href');
 
@@ -22,7 +32,7 @@ test('infect should inject a custom favicon into the DOM', function (t) {
   t.end();
 });
 
-test('infect should change the style of the body', function (t) {
+test('infect should change the style of the body', {skip: !document}, function (t) {
   var s = document.body.style;
   t.equal(!!s.backgroundColor, true, 'backgroundColor is changed');
   t.equal(!!s.borderTopWidth, true, 'borderTopWidth is changed');
@@ -31,12 +41,7 @@ test('infect should change the style of the body', function (t) {
   t.end();
 });
 
-test('infect should add a method html to t', function (t) {
-  t.equal(typeof t.html, 'function', 't.html is defined');
-  t.end();
-});
-
-test('t.html should call console log', function (t) {
+test('t.html should call console log', {skip: !document}, function (t) {
   sinon.spy(console, 'log');
   t.html('<div></div>');
   t.equal(console.log.callCount, 1);
@@ -44,7 +49,7 @@ test('t.html should call console log', function (t) {
   console.log.restore();
 });
 
-test('t.html should inject html into the DOM', function (t) {
+test('t.html should inject html into the DOM', {skip: !document}, function (t) {
   t.html('<div id="silly-hat"></div>');
   t.equal(!!document.getElementById('silly-hat'), true);
   t.end();

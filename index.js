@@ -60,8 +60,11 @@ function setInitalStyle() {
  * A container for our test results, with a little margin
  */
 
-var testResults = document.body.appendChild(document.createElement('div'));
-testResults.style.margin = '10px';
+var testResults;
+function createTestResults() {
+  testResults = document.body.appendChild(document.createElement('div'));
+  testResults.style.margin = '10px';
+}
 
 
 /**
@@ -142,7 +145,12 @@ function count(message) {
  */
 
 function infect(tape) {
+  if (!document) {
+   tape.Test.prototype.html = function () {};
+   return;
+  }
   injectFavicon();
+  createTestResults();
   setInitalStyle();
   decorateTape(tape);
   hijackLog();
