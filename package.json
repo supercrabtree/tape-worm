@@ -24,7 +24,7 @@
     "browserify": "13.0.0",
     "live-server": "0.9.2",
     "sinon": "1.17.3",
-    "tape": "4.5.1",
+    "tape": "4.6.0",
     "watchify": "3.7.0"
   },
   "repository": {
