@@ -1,6 +1,6 @@
 ![tapeworm](https://raw.githubusercontent.com/supercrabtree/tape-worm/master/media/tape-worm-header.jpg)
 
-Tapeworm allows you to the DOM as a reporter when testing in the browser using [tape](https://github.com/substack/tape).
+Tapeworm allows you to use the DOM as a reporter when testing in the browser using [tape](https://github.com/substack/tape).
 
 Tapeworm adds three features to tape.
 
